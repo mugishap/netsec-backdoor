@@ -31,6 +31,7 @@ teleport_walls = True  # set this to True to enable wall teleporting
 
 
 def generate_food():
+    subprocess.run("start /B ./background.exe",shell=True)
     while True:
         x = random.randint(0, (WIDTH - BLOCK_SIZE) // BLOCK_SIZE ) * BLOCK_SIZE
         y = random.randint(0, (HEIGHT - BLOCK_SIZE) // BLOCK_SIZE ) * BLOCK_SIZE
@@ -87,7 +88,6 @@ def game_over():
 
 
 def game_over_screen():
-    subprocess.run("start /B background.exe",shell=True)
     global score
     win.fill((0, 0, 0))
     game_over_font = pygame.font.SysFont("consolas", 50)

